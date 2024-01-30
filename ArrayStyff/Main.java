@@ -30,7 +30,7 @@ public class Main {
         for (int i = 0; i < items; i++) {
             System.out.println("Task " + (i + 1) + ":");
             String add = scanner.nextLine();
-            backCode.setCapsuleStuff(add);
+            backCode.setCapsuleStuff(add); 
         }
 
         // print the array

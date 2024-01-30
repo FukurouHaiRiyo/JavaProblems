@@ -45,7 +45,7 @@ public class BackCode {
 
     // setter to edit the array
     public void editCapsuleStuff(int index, String capsuleStuff) {
-        this.capsuleStuff.set(index, capsuleStuff);
+        this.capsuleStuff.set(index, capsuleStuff); 
     }
 
     // setter to add to the array

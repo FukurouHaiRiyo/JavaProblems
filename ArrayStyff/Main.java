@@ -66,7 +66,7 @@ public class Main {
                     System.out.println("You can't remove more than you have!");
                     System.exit(0);
                 } else if (remove > 0) {
-                    System.out.println("What item do you want to remove?");
+                    System.out.println("Task to add: ");
                     int index = scanner.nextInt();
                     scanner.nextLine();
                     for (int i = 0; i < remove; i++) {

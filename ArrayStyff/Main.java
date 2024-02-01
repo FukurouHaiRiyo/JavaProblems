@@ -28,7 +28,7 @@ public class Main {
                         scanner.nextLine();
                         
                         for (int i = 0; i < nr; i++) {
-                        // what tasks to add
+                            // what tasks to add
                             System.out.println("What tasks do you want to add?");
                             String addTask = "";
                             addTask = scanner.nextLine();
@@ -63,7 +63,7 @@ public class Main {
                             System.out.println("The array is empty!");
                             break;
                         }
-                        
+
                         System.out.println("What item do you want to edit?");
                         int edit = scanner.nextInt();
                         scanner.nextLine();

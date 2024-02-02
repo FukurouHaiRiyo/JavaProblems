@@ -3,7 +3,6 @@ package BookManagementSystem;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("unused")
 public class ShoppingCart {
     private ArrayList<Book> books;
 

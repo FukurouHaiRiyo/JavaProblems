@@ -16,6 +16,7 @@ public class Main {
         // switch case to let the user choose between adding a physical book or an ebook to the shopping cart, to calculate the total price and see the list of books in the shopping cart
         
         int choice;
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
         // print all the physical books and ebooks

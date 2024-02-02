@@ -1,5 +1,7 @@
 package BookManagementSystem;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +17,8 @@ public class Main {
 
         System.out.println("Enter the number of physical books you want to add to the library: ");
         n = scanner1.nextInt();
+
+        ArrayList<String> totalPhysical = new ArrayList<String>();
 
         for (int i = 0; i < n; i++){
             String title;
@@ -52,6 +56,8 @@ public class Main {
             System.out.println("Enter the shipping of the book: ");
             shipping = scanner1.nextDouble();
             physicalBook.setShipping(shipping);
+
+            totalPhysical.add(physicalBook.getTitle());
         }
 
 
@@ -114,7 +120,9 @@ public class Main {
             switch (choice) {
                 case 1:
                     // view the physical book
-                    System.out.println("Physical book: " + physicalBook.getTitle() + " " + physicalBook.getAuthor() + " " + physicalBook.getIsbn() + " " + physicalBook.getPrice() + " " + physicalBook.getWeight() + " " + physicalBook.getShipping());
+                    for (int i = 0; i < totalPhysical.size(); i++){
+                        System.out.println("Physical book: " + totalPhysical.get(i));
+                    }
                     break;
                 case 2:
                     // view the ebook

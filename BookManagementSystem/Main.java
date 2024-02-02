@@ -108,7 +108,7 @@ public class Main {
 
 
         while (true){
-            System.out.println("What do you want to do? (1 - View physical book, 2 - View ebook)");
+            System.out.println("What do you want to do? (1 - View physical book, 2 - View ebook 3 - Add a physical book to the shopping cart, 4 - Add an ebook to the shopping cart, 5 - See the list of books in the shopping cart, 6 - Exit the program)");
             choice = scanner1.nextInt();
 
             switch (choice) {
@@ -123,16 +123,24 @@ public class Main {
                 case 3: // add a physical book to the shopping cart
                     cart.addBook(physicalBook);
 
-                    // print the total price of the shopping cart
+                    // print the books in the shopping cart 
+                    for (Book book : cart.getBooks()) {
+                        System.out.println(book.getTitle());
+                        // price
+                        System.out.println(book.getPrice());
+                    }
+
+                    // calculate the total price of the shopping cart
                     System.out.println("Total price: " + cart.calculateTotalPrice());
                     break;
 
                 case 4: // add an ebook to the shopping cart
                     cart.addBook(ebook);
 
-                    // print the total price of the shopping cart
-                    System.out.println("Total price: " + cart.calculateTotalPrice());
-                    break;
+                    // print the books in the shopping cart 
+                    for (Book book : cart.getBooks()) {
+                        System.out.println(book.getTitle());
+                    }
 
                 case 5: // see the list of books in the shopping cart
                     for (Book book : cart.getBooks()) {

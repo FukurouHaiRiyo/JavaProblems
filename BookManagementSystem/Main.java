@@ -8,16 +8,99 @@ public class Main {
         ShoppingCart cart = new ShoppingCart();
 
         // create a new physical book
-        PhysicalBook physicalBook = new PhysicalBook("Inferno", "Dan Brown", "978-0307474278", 10.0, 0.5, 5.0);
+        PhysicalBook physicalBook = new PhysicalBook("", "", "", 0.0, 0.0, 0.0);
 
-        // create a new ebook
-        EBook ebook = new EBook("Origins", "Dan Brown", "978-0307474278", 10.0, 5.0);
+        int n;
+        Scanner scanner1 = new Scanner(System.in);
+
+        System.out.println("Enter the number of physical books you want to add to the library: ");
+        n = scanner1.nextInt();
+
+        for (int i = 0; i < n; i++){
+            String title;
+            // read the title of the book
+            System.out.println("Enter the title of the book: ");
+            title = scanner1.next();
+            physicalBook.setTitle(title);
+
+            // set the author of the book
+            String author;
+            System.out.println("Enter the author of the book: ");
+            author = scanner1.next();
+            physicalBook.setAuthor(author);
+
+            // set the isbn of the book
+            String isbn;
+            System.out.println("Enter the isbn of the book: ");
+            isbn = scanner1.next();
+            physicalBook.setIsbn(isbn);
+
+            // set the price of the book
+            double price;
+            System.out.println("Enter the price of the book: ");
+            price = scanner1.nextDouble();
+            physicalBook.setPrice(price);
+
+            // set the weight of the book
+            double weight;
+            System.out.println("Enter the weight of the book: ");
+            weight = scanner1.nextDouble();
+            physicalBook.setWeight(weight);
+
+            // set the shipping of the book
+            double shipping;
+            System.out.println("Enter the shipping of the book: ");
+            shipping = scanner1.nextDouble();
+            physicalBook.setShipping(shipping);
+        }
+
+
+        // print the title of the physical book
+        System.out.println("Physical book: " + physicalBook.getTitle());
+ 
+        // create a new ebook, in a similar way as the physical book
+        EBook ebook = new EBook("", "", "", 0.0, 0.0);
+
+        int m;
+
+        System.out.println("Enter the number of ebooks you want to add to the library:");
+        m = scanner1.nextInt();
+
+        for (int i = 0; i < m; i++){
+            String title;
+            // read the title of the book
+            System.out.println("Enter the title of the book: ");
+            title = scanner1.next();
+            ebook.setTitle(title);
+
+            // set the author of the book
+            String author;
+            System.out.println("Enter the author of the book: ");
+            author = scanner1.next();
+            ebook.setAuthor(author);
+
+            // set the isbn of the book
+            String isbn;
+            System.out.println("Enter the isbn of the book: ");
+            isbn = scanner1.next();
+            ebook.setIsbn(isbn);
+
+            // set the price of the book
+            double price;
+            System.out.println("Enter the price of the book: ");
+            price = scanner1.nextDouble();
+            ebook.setPrice(price);
+
+            // set the size of the book
+            double sizeInMb;
+            System.out.println("Enter the size of the book: ");
+            sizeInMb = scanner1.nextDouble();
+            ebook.setSizeInMb(sizeInMb);
+        }         
 
         // switch case to let the user choose between adding a physical book or an ebook to the shopping cart, to calculate the total price and see the list of books in the shopping cart
         
         int choice;
-        @SuppressWarnings("resource")
-        Scanner scanner = new Scanner(System.in);
 
         // print all the physical books and ebooks
         System.out.println("Physical book: " + physicalBook.getTitle());
@@ -25,33 +108,45 @@ public class Main {
 
 
         while (true){
-            System.out.println("What do you want to do? (1-Add a physical book, 2-Add an ebook, 3-See the total price, 4-See the list of books in the shopping cart, 5-Exit)");
-            choice = scanner.nextInt();
+            System.out.println("What do you want to do? (1 - View physical book, 2 - View ebook)");
+            choice = scanner1.nextInt();
 
             switch (choice) {
                 case 1:
-                    cart.addBook(physicalBook);
+                    // view the physical book
+                    System.out.println("Physical book: " + physicalBook.getTitle() + " " + physicalBook.getAuthor() + " " + physicalBook.getIsbn() + " " + physicalBook.getPrice() + " " + physicalBook.getWeight() + " " + physicalBook.getShipping());
                     break;
                 case 2:
+                    // view the ebook
+                    System.out.println("Ebook: " + ebook.getTitle() + " " + ebook.getAuthor() + " " + ebook.getIsbn() + " " + ebook.getPrice() + " " + ebook.getSizeInMb());
+
+                case 3: // add a physical book to the shopping cart
+                    cart.addBook(physicalBook);
+
+                    // print the total price of the shopping cart
+                    System.out.println("Total price: " + cart.calculateTotalPrice());
+                    break;
+
+                case 4: // add an ebook to the shopping cart
                     cart.addBook(ebook);
+
+                    // print the total price of the shopping cart
+                    System.out.println("Total price: " + cart.calculateTotalPrice());
                     break;
-                case 3:
-                    System.out.println("The total price is: " + cart.calculateTotalPrice());
-                    System.out.println("");
-                    break;
-                case 4:
-                    System.out.println("The list of books in the shopping cart is: ");
+
+                case 5: // see the list of books in the shopping cart
                     for (Book book : cart.getBooks()) {
                         System.out.println(book.getTitle());
                     }
-                    System.out.println("");
                     break;
-                case 5:
+
+                case 6: // exit the program
+                    scanner1.close();
                     System.exit(0);
                     break;
+
                 default:
-                    System.out.println("Invalid choice");
-                    break;
+                    scanner1.close();
             }
         }
     }

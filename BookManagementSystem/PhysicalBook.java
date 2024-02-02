@@ -8,14 +8,12 @@ package BookManagementSystem;
 public class PhysicalBook extends Book{
     private double weight;
     private double shipping;
-    private int quantity;
 
     // constructor
-    public PhysicalBook(String title, String author, String isbn, double price, double weight, int quantity, double shipping){
+    public PhysicalBook(String title, String author, String isbn, double price, double weight, double shipping){
         super(title, author, isbn, price);
         this.weight = weight;
         this.shipping = shipping;
-        this.quantity = quantity;
     }
 
     // method to calculate the total price
@@ -40,14 +38,6 @@ public class PhysicalBook extends Book{
     }
     public void setShipping(double shipping){
         this.shipping = shipping;
-    }
-
-    // get and set quantity
-    public int getQuantity(){
-        return quantity;
-    }
-    public void setQuantity(int quantity){
-        this.quantity = quantity;
     }
 
     // method to calculate the total weight

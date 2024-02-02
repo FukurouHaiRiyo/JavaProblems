@@ -6,7 +6,7 @@ public class Main {
         ShoppingCart cart = new ShoppingCart();
 
         // create a new physical book
-        PhysicalBook physicalBook = new PhysicalBook("Inferno", "Dan Brown", "978-0307474278", 10.0, 0.5, 1, 5.0);
+        PhysicalBook physicalBook = new PhysicalBook("Inferno", "Dan Brown", "978-0307474278", 10.0, 0.5, 5.0);
 
         // create a new ebook
         EBook ebook = new EBook("Origins", "Dan Brown", "978-0307474278", 10.0, 5.0);

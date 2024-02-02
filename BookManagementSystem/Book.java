@@ -3,10 +3,10 @@ package BookManagementSystem;
 /*
     Class Book must have the following attributes:
 
-    title: a String representing the title of the book.
-    author: a String representing the author of the book.
-    isbn: a String that represents the book's identification number.
-    price: a double representing the price of the book.
+        title: a String representing the title of the book.
+        author: a String representing the author of the book.
+        isbn: a String that represents the book's identification number.
+        price: a double representing the price of the book.
 */
 
 public class Book {

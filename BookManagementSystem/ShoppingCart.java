@@ -3,6 +3,9 @@ package BookManagementSystem;
 import java.util.ArrayList;
 import java.util.List;
 
+// The ShoppingCart class must have the following attributes:
+//      books: an ArrayList of Book objects representing the books in the shopping cart.
+
 public class ShoppingCart {
     private ArrayList<Book> books;
 

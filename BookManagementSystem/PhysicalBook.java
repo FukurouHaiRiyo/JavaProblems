@@ -4,6 +4,7 @@ package BookManagementSystem;
     // weight: a double representing the weight of the physical book.
     // shipping: a double representing the shipping price of the physical book.
 
+
 public class PhysicalBook extends Book{
     private double weight;
     private double shipping;

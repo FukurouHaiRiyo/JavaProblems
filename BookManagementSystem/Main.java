@@ -131,7 +131,11 @@ public class Main {
                     }
 
                     // calculate the total price of the shopping cart
-                    System.out.println("Total price: " + cart.calculateTotalPrice() + " " + " number of books: " + cart.getNumberOfBooks());
+                    double totalPrice = 0.0;
+                    for (Book book : cart.getBooks()) {
+                        totalPrice += book.getPrice() + physicalBook.getShipping();
+                    }
+                    System.out.println("Total price: " + totalPrice + " " + " number of books: " + cart.getNumberOfBooks());
                     break;
 
                 case 4: // add an ebook to the shopping cart

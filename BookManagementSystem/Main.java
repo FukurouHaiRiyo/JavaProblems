@@ -6,25 +6,27 @@ public class Main {
         ShoppingCart cart = new ShoppingCart();
 
         // create a new physical book
-        PhysicalBook physicalBook = new PhysicalBook("The Da Vinci Code", "Dan Brown", "978-0307474278", 10.0, 2.0, 5.0);
+        PhysicalBook physicalBook = new PhysicalBook("Inferno", "Dan Brown", "978-0307474278", 10.0, 0.5, 1, 5.0);
 
         // create a new ebook
         EBook ebook = new EBook("Origins", "Dan Brown", "978-0307474278", 10.0, 5.0);
 
-        // let the user choose which book to add to the shopping cart
+        // list all the available book, their price and type (physical or ebook)
+        System.out.println("Available books:");
+        System.out.println("Title: " + physicalBook.getTitle() + ", Price: " + physicalBook.calculatePriceTotal() + ", Type: Physical");
+        System.out.println("Title: " + ebook.getTitle() + ", Price: " + ebook.calculatePriceTotal() + ", Type: Ebook");
+
+        // let the user choose which books to add the books to the shopping cart
         cart.addBook(physicalBook);
         cart.addBook(ebook);
 
-        // print the number of books in the shopping cart
-        System.out.println("Number of books in the shopping cart: " + cart.getNumberOfBooks());
-
-        // print the list of books in the shopping cart
-        System.out.println("List of books in the shopping cart: ");
+        // list all the books in the shopping cart
+        System.out.println("Books in the shopping cart:");
         for (Book book : cart.getBooks()) {
-            System.out.println(book.getTitle());
+            System.out.println("Title: " + book.getTitle() + ", Price: " + book.calculatePriceTotal());
         }
 
-        // print the total price of the shopping cart
+        // calculate the total price of the shopping cart
         System.out.println("Total price: " + cart.calculateTotalPrice());
     }
 }

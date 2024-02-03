@@ -22,8 +22,8 @@ impl EBook{
     // getters and setters
 
     // getter for size_in_mb
-    fn get_size_in_mb(&self) -> f64{
-        self.size_in_mb
+    fn get_size_in_mb(&self) -> &f64{
+        &self.size_in_mb
     }
     // setter for size_in_mb
     fn set_size_in_mb(&mut self, size_in_mb: f64){

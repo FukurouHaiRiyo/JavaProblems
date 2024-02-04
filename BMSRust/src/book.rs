@@ -36,11 +36,11 @@ impl Book{
     }
 
     // getter for author
-    pub fn get_better(&self) -> &String{
+    pub fn get_author(&self) -> &String{
         &self.author
     }
     // setter for author
-    pub fn set_athor(&mut self, author: String){
+    pub fn set_author(&mut self, author: String){
         self.author = author;
     }
 

@@ -1,13 +1,13 @@
 mod Book;
 use Book::Book;
 
-struct EBook{
+pub struct EBook{
     book: Book,
     size_in_mb: f64,
 }
 
-impl EBook{
-    fn new(title: String, author: String, isbn: String, price: f64, size_in_mb: f64) -> Self{
+pub impl EBook{
+    pub fn new(title: String, author: String, isbn: String, price: f64, size_in_mb: f64) -> Self{
         EBook{
             book: Book{
                 title,
@@ -22,11 +22,11 @@ impl EBook{
     // getters and setters
 
     // getter for size_in_mb
-    fn get_size_in_mb(&self) -> &f64{
+    pub fn get_size_in_mb(&self) -> &f64{
         &self.size_in_mb
     }
     // setter for size_in_mb
-    fn set_size_in_mb(&mut self, size_in_mb: f64){
+    pub fn set_size_in_mb(&mut self, size_in_mb: f64){
         self.size_in_mb = size_in_mb;
     }
 }

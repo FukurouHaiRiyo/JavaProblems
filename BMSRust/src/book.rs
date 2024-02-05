@@ -102,4 +102,13 @@ impl PhysicalBook {
     pub fn set_shipping(&mut self, shipping: f64) {
         self.shipping = shipping;
     }
+
+    // Getters and setters for book
+    pub fn get_title(&self) -> String {
+        self.book.get_title()
+    }
+
+    pub fn get_author(&self) -> String {
+        self.book.get_author()
+    }
 }

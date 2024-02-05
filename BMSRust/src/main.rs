@@ -1,4 +1,3 @@
-mod Book;
 mod book;
 use book::PhysicalBook;
 
@@ -13,8 +12,8 @@ fn main() {
         4.99,
     );
 
-    println!("Title: {}", Book::get_title());
-    println!("Author: {}", Book::get_author());
+    println!("Title: {}", physical_book.get_title());
+    println!("Author: {}", physical_book.get_author());
 
     println!("Total price: {}", physical_book.calculate_price_total());
     println!("Total weight: {}", physical_book.calculate_weight_total());

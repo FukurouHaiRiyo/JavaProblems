@@ -112,3 +112,45 @@ impl PhysicalBook {
         self.book.get_author()
     }
 }
+
+// Implement methods for Ebook
+pub struct Ebook{
+    book: Book,
+    size_in_mb: f64,
+}
+
+// Implement methods for Ebook
+impl Ebook {
+    pub fn new(title: String, author: String, isbn: String, price: f64, size_in_mb: f64) -> Ebook {
+        Ebook {
+            book: Book::new(title, author, isbn, price),
+            size_in_mb,
+        }
+    }
+
+    pub fn calculate_price_total(&self) -> f64 {
+        self.book.price
+    }
+
+    pub fn calculate_size_in_mb(&self) -> f64 {
+        self.size_in_mb
+    }
+
+    // Getters and setters for size_in_mb
+    pub fn get_size_in_mb(&self) -> f64 {
+        self.size_in_mb
+    }
+
+    pub fn set_size_in_mb(&mut self, size_in_mb: f64) {
+        self.size_in_mb = size_in_mb;
+    }
+
+    // Getters and setters for book
+    pub fn get_title(&self) -> String {
+        self.book.get_title()
+    }
+
+    pub fn get_author(&self) -> String {
+        self.book.get_author()
+    }
+}

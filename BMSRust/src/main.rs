@@ -1,11 +1,22 @@
+mod Book;
 mod book;
-use book::EBook;
 use book::PhysicalBook;
 
 fn main() {
-    // create an instance of Book
-    let book = EBook::new(String::from("The Alchemist"), String::from("Paulo Coelho"), String::from("978-0061122415"), 9.99, 1.2);
+    // Example usage:
+    let physical_book = PhysicalBook::new(
+        "The Rust Programming Language".to_string(),
+        "Steve Klabnik and Carol Nichols".to_string(),
+        "1234567890".to_string(),
+        29.99,
+        1.2,
+        4.99,
+    );
 
-    // print the details of the book
-    println!("Title: {}", book.book.get_title());
+    println!("Title: {}", Book::get_title());
+    println!("Author: {}", Book::get_author());
+
+    println!("Total price: {}", physical_book.calculate_price_total());
+    println!("Total weight: {}", physical_book.calculate_weight_total());
+    println!("Total shipping: {}", physical_book.calculate_shipping_total());
 }

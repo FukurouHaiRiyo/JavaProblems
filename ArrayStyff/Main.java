@@ -13,6 +13,8 @@ public class Main {
             // initialize BackCode
             BackCode backCode = new BackCode();
 
+            System.out.println("Hello");
+
             // initialize the array
             backCode.setCapsuledStuff(capsuleStuff);
 

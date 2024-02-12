@@ -10,6 +10,7 @@ public class main {
         Scanner input = new Scanner(System.in);
         
         ArrayList<Integer> listaDeNotas = new ArrayList<>();
+        listaDeNotas.add(32);
         listaDeNotas.add(6);
         listaDeNotas.add(8);
         listaDeNotas.add(9);
